@@ -29,7 +29,7 @@ class _ChatListState extends State<ChatList> {
     {
       'id': '2',
       'name': 'Nurse Anna',
-      'img': 'images/user.png',
+      'img': 'images/user2.png',
       'rating': 4,
       'is_Online': false,
       'medicalField': '2 minute ago',
@@ -37,7 +37,49 @@ class _ChatListState extends State<ChatList> {
     {
       'id': '3',
       'name': 'Dr. Jane Smith',
-      'img': 'images/user.png',
+      'img': 'images/user3.png',
+      'rating': 4,
+      'is_Online': true,
+      'medicalField': '3 minute ago',
+    },
+    {
+      'id': '4',
+      'name': 'Dr. Jane Smith',
+      'img': 'images/user4.png',
+      'rating': 4,
+      'is_Online': true,
+      'medicalField': '3 minute ago',
+    },
+    {
+      'id': '5',
+      'name': 'Dr. Jane Smith',
+      'img': 'images/user5.png',
+      'rating': 4,
+      'is_Online': true,
+      'medicalField': '3 minute ago',
+    },
+
+    {
+      'id': '6',
+      'name': 'Dr. Jane Smith',
+      'img': 'images/user5.png',
+      'rating': 4,
+      'is_Online': true,
+      'medicalField': '3 minute ago',
+    },
+    {
+      'id': '7',
+      'name': 'Dr. Jane Smith',
+      'img': 'images/user5.png',
+      'rating': 4,
+      'is_Online': true,
+      'medicalField': '3 minute ago',
+    },
+
+     {
+      'id': '8',
+      'name': 'Dr. Jane Smith',
+      'img': 'images/user5.png',
       'rating': 4,
       'is_Online': true,
       'medicalField': '3 minute ago',
@@ -68,7 +110,7 @@ class _ChatListState extends State<ChatList> {
               maxRadius: 30,
             ),
             const SizedBox(
-              width: 16,
+              width: 10,
             ),
             Expanded(
               child: Container(
@@ -81,7 +123,7 @@ class _ChatListState extends State<ChatList> {
                       style: const TextStyle(fontSize: 16),
                     ),
                     const SizedBox(
-                      height: 6,
+                      height: 2,
                     ),
                     Text(
                       isOnline ? 'Online' : 'Offline', // Display online status
@@ -127,7 +169,7 @@ class _ChatListState extends State<ChatList> {
               onPressed: () {
                 // Handle the additional action for the list icon
               },
-              icon: const Icon(Icons.list_rounded),
+              icon: const Icon(Icons.settings),
             ),
           ),
         ],
@@ -151,6 +193,17 @@ class _ChatListState extends State<ChatList> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+             Row(
+              
+              crossAxisAlignment: CrossAxisAlignment.start,
+            
+              children: [
+                
+                const Padding(padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                child:Text("Frequently Contacted",style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),))
+               
+              ],
+            ),
             // Add any other widgets here
             _contentSendMoney(), // Your custom horizontal scroll widget
 
@@ -199,7 +252,7 @@ Widget _buildAvatarContainer(String avatarAsset) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: <Widget>[
-      const SizedBox(height: 40,),
+      const SizedBox(height: 20,),
       Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -223,13 +276,13 @@ Widget _contentSendMoney() {
        
         _buildAvatarContainer('images/user.png'),
         const SizedBox(width: 20,),
-        _buildAvatarContainer('images/user.png'),
+        _buildAvatarContainer('images/user2.png'),
         const SizedBox(width: 20,),
-        _buildAvatarContainer('images/user.png'),
+        _buildAvatarContainer('images/user3.png'),
         const SizedBox(width: 20,),
-        _buildAvatarContainer('images/user.png'),
+        _buildAvatarContainer('images/user4.png'),
         const SizedBox(width: 20,),
-        _buildAvatarContainer('images/user.png'),
+        _buildAvatarContainer('images/user5.png'),
         const SizedBox(width: 20,),
         _buildAvatarContainer('images/user.png'),
         const SizedBox(width: 20,),

@@ -89,7 +89,7 @@ class MyChatAppState extends State<MyChatApp> {
           Padding(
               padding: const EdgeInsets.only(right: 20.0, left: 20.0),
               child:
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.list_rounded))),
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert_rounded))),
         ],
       ),
       body: Column(

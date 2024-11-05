@@ -42,6 +42,7 @@ class _DashboardState extends State<Dashboard> with
             physics: const NeverScrollableScrollPhysics(),
           controller: tabController,
             children:  [
+                 const Dashboard(),
                  MyChatApp(userId: "1", name: "john", img: "user.png", isOnline: true),
                  const ChatList()
             ]),

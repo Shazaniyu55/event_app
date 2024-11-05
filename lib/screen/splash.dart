@@ -20,7 +20,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
     final List<Introduction> _list = [
     const Introduction(
-      title: 'Discover, Join Events ',
+      title: 'Discover, Join Events\n & Conference ',
       subTitle: 'Browse through a variety of events tailored to your interests. Register for sessions, track your favourite topics.',
       imageUrl: 'images/splash1.png',
     ),
