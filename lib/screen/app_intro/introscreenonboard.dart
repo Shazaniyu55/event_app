@@ -71,7 +71,6 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
                 
               ),
               Positioned(
-              
                 child: Container(
                   height: Get.height - 90,
                   width: Get.width,
@@ -163,14 +162,13 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
 
   Widget _indicator(bool isActive) {
     return SizedBox(
-      height: 10,
+      height: 5,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
         margin: const EdgeInsets.symmetric(horizontal: 4.0),
-        height: 14,
+        height: 10,
         width: 100,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(50),
           shape: BoxShape.rectangle,
           color: isActive ? white : const Color.fromARGB(173, 11, 127, 71),
         ),

@@ -45,8 +45,60 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                   const SizedBox(
+                    height: 30,
+                  ),
+                   GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Container(
+                            height: 35,
+                            width: 35,
+                            color: Colors.transparent,
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              color: headingColor.value,
+                            )),
+                      ),
+                      SizedBox(height: 20,),
+
+                       Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                              Text(
+                        "SignUp",
+                        style: TextStyle(
+                          color: headingColor.value,
+                          fontSize: 19,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "sfpro",
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      
+                      Text(
+                        "it is good to have you here, sigup to enjoy nice\n experience with others",
+                        style: TextStyle(
+                          color: primaryColor.value,
+                          fontSize: 12,
+                          fontFamily: "sfpro",
+                        ),
+                      ),
+                          ],
+                        )
+                      
+                      ),
+                      
+                    ],
+                  ),
                   const SizedBox(
-                    height: 90,
+                    height: 70,
                   ),
                 
                   InputFieldsWithSeparateIcon(

@@ -30,17 +30,18 @@ class _SignupScreenState extends State<SignupScreen> {
 
   TextEditingController fNameController = TextEditingController();
   TextEditingController lNameController = TextEditingController();
+  TextEditingController jobtitleController = TextEditingController();
+  TextEditingController organizationController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
-  TextEditingController confirmPassController = TextEditingController();
 
   var fNameError = ''.obs;
   var lNameError = ''.obs;
   var nameError = ''.obs;
   var emailError = ''.obs;
+  var jobtitleError = ''.obs;
+  var organizationError = ''.obs;
   var passError = ''.obs;
-  var confirmPassError = ''.obs;
-  var currencyError = ''.obs;
   var checkBoxErr = ''.obs;
 
   var checkBox = false.obs;
@@ -49,8 +50,6 @@ class _SignupScreenState extends State<SignupScreen> {
   void initState() {
     super.initState();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -70,12 +69,30 @@ class _SignupScreenState extends State<SignupScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                 
+                  GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Container(
+                            height: 35,
+                            width: 35,
+                            color: Colors.transparent,
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              color: headingColor.value,
+                            )),
+                      ),
+                      SizedBox(height: 20,),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        "Signup",
+                      
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                              Text(
+                        "Whats Your Name?",
                         style: TextStyle(
                           color: headingColor.value,
                           fontSize: 19,
@@ -83,6 +100,21 @@ class _SignupScreenState extends State<SignupScreen> {
                           fontFamily: "sfpro",
                         ),
                       ),
+                      const SizedBox(height: 4),
+                      
+                      Text(
+                        "Members here user their real names to build\n and community?",
+                        style: TextStyle(
+                          color: primaryColor.value,
+                          fontSize: 12,
+                          fontFamily: "sfpro",
+                        ),
+                      ),
+                          ],
+                        )
+                      
+                      ),
+                      
                     ],
                   ),
                   const SizedBox(
@@ -115,6 +147,32 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   CommonWidgets.showErrorMessage(lNameError.value),
                   InputFieldsWithSeparateIcon(
+                    headerText: "Job Title",
+                    hintText: "Job Title",
+                    svg: 'user',
+                    onChange: (val) {
+                      if (val != null && val != '') {
+                        jobtitleError.value = '';
+                      }
+                    },
+                    textController: jobtitleController,
+                    hasHeader: true,
+                  ),
+                  CommonWidgets.showErrorMessage(jobtitleError.value),
+                  InputFieldsWithSeparateIcon(
+                    headerText: "Organization",
+                    hintText: "Organization",
+                    svg: 'user',
+                    onChange: (val) {
+                      if (val != null && val != '') {
+                        organizationError.value = '';
+                      }
+                    },
+                    textController: organizationController,
+                    hasHeader: true,
+                  ),
+                  CommonWidgets.showErrorMessage(organizationError.value),
+                  InputFieldsWithSeparateIcon(
                     headerText: "Email",
                     hintText: "Email Address",
                     svg: 'email',
@@ -138,19 +196,6 @@ class _SignupScreenState extends State<SignupScreen> {
                     },
                     textController: passController,
                   ),
-                  CommonWidgets.showErrorMessage(passError.value),
-                  InputFieldPassword(
-                    headerText: "Confirm Password",
-                    svg: 'pass',
-                    hintText: "********",
-                    onChange: (value) {
-                      if (value != null && value != '') {
-                        confirmPassError.value = '';
-                      }
-                    },
-                    textController: confirmPassController,
-                  ),
-                  CommonWidgets.showErrorMessage(confirmPassError.value),
                   Row(
                     children: [
                       Checkbox(
@@ -277,10 +322,12 @@ class _SignupScreenState extends State<SignupScreen> {
       passError.value = 'Minimum 1 digit required.';
     } else if (!hasSpecialCharacters.hasMatch(passController.text)) {
       passError.value = 'Minimum 1 special character required.';
-    } else if (passController.text != confirmPassController.text) {
-      confirmPassError.value = 'Passwords do not match.';
     } else if (checkBox.value == false) {
       checkBoxErr.value = 'Please accept our terms & conditions.';
+    } else if (jobtitleController.text.trim() == '') {
+      jobtitleError.value = "Please enter your jobTitle";
+    } else if (organizationController.text.trim() == '') {
+      organizationError.value = "Please enter your organization type";
     } else {
       changeScreenReplacement(context, const VerifyScreen());
     }
