@@ -193,13 +193,13 @@ class _ChatListState extends State<ChatList> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-             Row(
+             const Row(
               
               crossAxisAlignment: CrossAxisAlignment.start,
             
               children: [
                 
-                const Padding(padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                Padding(padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
                 child:Text("Frequently Contacted",style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),))
                
               ],

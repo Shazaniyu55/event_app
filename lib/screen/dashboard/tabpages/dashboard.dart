@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class DashBoard extends StatefulWidget {
-  const DashBoard({super.key});
+class FeedScreen extends StatefulWidget {
+  const FeedScreen({super.key});
 
   @override
-  State<DashBoard> createState() => _DashBoardState();
+  State<FeedScreen> createState() => _FeedScreenState();
 }
 
-class _DashBoardState extends State<DashBoard> {
+class _FeedScreenState extends State<FeedScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text("Dashboard")
       ),

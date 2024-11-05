@@ -1,6 +1,9 @@
 import 'package:event_app/constant/colors.dart';
-import 'package:event_app/screen/dashboard/tabpages/chat.dart';
 import 'package:event_app/screen/dashboard/tabpages/chat_list.dart';
+import 'package:event_app/screen/dashboard/tabpages/dashboard.dart';
+import 'package:event_app/screen/dashboard/tabpages/profile.dart';
+import 'package:event_app/screen/dashboard/tabpages/saved.dart';
+import 'package:event_app/screen/dashboard/tabpages/search.dart';
 
 import 'package:flutter/material.dart';
 
@@ -41,10 +44,13 @@ class _DashboardState extends State<Dashboard> with
           body: TabBarView(
             physics: const NeverScrollableScrollPhysics(),
           controller: tabController,
-            children:  [
-                 const Dashboard(),
-                 MyChatApp(userId: "1", name: "john", img: "user.png", isOnline: true),
-                 const ChatList()
+            children:  const [
+                 FeedScreen(),
+                 Search(),
+                 //MyChatApp(userId: "1", name: "john", img: "user.png", isOnline: true),
+                 ChatList(),
+                 Saved(),
+                 Profile()
             ]),
             bottomNavigationBar: BottomNavigationBar(
               items: const [
