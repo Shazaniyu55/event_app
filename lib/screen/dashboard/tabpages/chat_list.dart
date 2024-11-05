@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, prefer_final_fields
 
+import 'package:event_app/helpers/screen_navigation.dart';
+import 'package:event_app/screen/dashboard/tabpages/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:event_app/constant/colors.dart';
@@ -76,7 +78,7 @@ class _ChatListState extends State<ChatList> {
       'medicalField': '3 minute ago',
     },
 
-     {
+    {
       'id': '8',
       'name': 'Dr. Jane Smith',
       'img': 'images/user5.png',
@@ -99,6 +101,7 @@ class _ChatListState extends State<ChatList> {
       onTap: () {
         // Handle onTap action here
         //makeRequest();
+        changeScreenReplacement(context, MyChatApp(userId: "1", name: "john", img: "img", isOnline: true));
       },
       child: Container(
         padding:
@@ -193,15 +196,17 @@ class _ChatListState extends State<ChatList> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-             const Row(
-              
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-            
               children: [
-                
-                Padding(padding: EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
-                child:Text("Frequently Contacted",style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),))
-               
+                Padding(
+                    padding:
+                        EdgeInsets.only(right: 20.0, left: 20.0, top: 10.0),
+                    child: Text(
+                      "Frequently Contacted",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                    ))
               ],
             ),
             // Add any other widgets here
@@ -252,7 +257,9 @@ Widget _buildAvatarContainer(String avatarAsset) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: <Widget>[
-      const SizedBox(height: 20,),
+      const SizedBox(
+        height: 20,
+      ),
       Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -272,20 +279,30 @@ Widget _contentSendMoney() {
     scrollDirection: Axis.horizontal,
     child: Row(
       children: <Widget>[
-       
-       
         _buildAvatarContainer('images/user.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user2.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user3.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user4.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user5.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user.png'),
-        const SizedBox(width: 20,),
+        const SizedBox(
+          width: 20,
+        ),
         _buildAvatarContainer('images/user.png'),
       ],
     ),
