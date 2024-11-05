@@ -82,7 +82,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               color: headingColor.value,
                             )),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [

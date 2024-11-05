@@ -2,6 +2,8 @@
 
 import 'package:event_app/constant/colors.dart';
 import 'package:event_app/controller/appController.dart';
+import 'package:event_app/helpers/screen_navigation.dart';
+import 'package:event_app/screen/dashboard/home.dart';
 // import 'package:event_app/helper/navigator.dart';
 // import 'package:event_app/screen/forgotpass.dart';
 // import 'package:event_app/screen/home/dashboard.dart';
@@ -61,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: headingColor.value,
                             )),
                       ),
-                      SizedBox(height: 20,),
+                      const SizedBox(height: 20,),
 
                        Row(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -218,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
     } else if (passController.text.trim() == '') {
       passErr.value = 'Please enter your password.';
     } else {
-      //changeScreenReplacement(context, const Dashboard());
+      changeScreenReplacement(context, const Dashboard());
     }
   }
 }
