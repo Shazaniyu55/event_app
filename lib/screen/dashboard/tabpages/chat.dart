@@ -122,7 +122,12 @@ class MyChatAppState extends State<MyChatApp> {
                     ),
                   ),
                 ),
-                Container(
+                
+              ],
+            ),
+            
+          ),
+          Container(
                   margin: const EdgeInsets.only(
                       left: 8.0, right: 8.0, bottom: 11.0),
                   child: Transform.rotate(
@@ -140,9 +145,6 @@ class MyChatAppState extends State<MyChatApp> {
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
         ],
       ),
     );
