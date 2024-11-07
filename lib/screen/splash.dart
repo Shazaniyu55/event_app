@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual);
-    Future.delayed(const Duration(seconds: 8), () {
+    Future.delayed(const Duration(seconds: 5), () {
       changeScreenReplacement(context, IntroScreenOnboarding(
                                     introductionList: _list,
                                     onTapSkipButton: () {

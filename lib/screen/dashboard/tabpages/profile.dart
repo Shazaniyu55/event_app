@@ -1,5 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, avoid_print
 
+import 'package:event_app/helpers/screen_navigation.dart';
+import 'package:event_app/screen/dashboard/settings.dart';
 import 'package:event_app/widgets/gallery.dart';
 import 'package:event_app/widgets/igtv.dart';
 import 'package:event_app/widgets/profile_header.dart';
@@ -38,7 +40,7 @@ class _ProfileState extends State<Profile> {
                 Icons.settings,
                 color: Colors.black,
               ),
-              onPressed: () => print("Add"),
+              onPressed: () =>  changeScreen(context, const SettingsPage2()),
             )
           ],
         ),

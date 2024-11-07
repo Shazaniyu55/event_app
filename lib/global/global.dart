@@ -1,4 +1,6 @@
 
+// ignore_for_file: unused_import
+
 import 'package:event_app/model/chatmodel.dart';
 
 
@@ -20,7 +22,7 @@ List<Highlight> highlightItems = [
 
 
 //list of message
-List<MessageData> messageList = [];
+//List<MessageData> messageList = [];
 
 
 

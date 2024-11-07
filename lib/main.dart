@@ -1,3 +1,6 @@
+// ignore_for_file: unused_import
+
+import 'package:event_app/screen/dashboard/settings.dart';
 import 'package:event_app/screen/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:event_app/controller/appController.dart';

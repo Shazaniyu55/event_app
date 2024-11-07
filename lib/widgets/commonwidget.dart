@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CommonWidgets {
-  final appController = Get.find<AppController>();
 
   TextEditingController amountController = TextEditingController();
   var amountErrBox = ''.obs;
@@ -256,7 +255,7 @@ class CommonWidgets {
     );
   }
 
-  Future selectWithdrawBottomSheet(BuildContext context,
+   selectWithdrawBottomSheet(BuildContext context,
       {Balance? selectedToken}) {
     return Get.bottomSheet(
       isScrollControlled: true,
